@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10 # 런타임 nodejs10으로 설정
+    commands:
+      - npm i npm@latest -g # npm 버전 업데이트
+  pre_build:
+    commands:
+      - npm install
+  build:
+    commands:
+      - npm run build
+  post_build:
+    commands:
+      - aws s3 sync ./dist s3://choikt-web-main
+      
