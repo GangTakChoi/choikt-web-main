@@ -14,5 +14,5 @@ phases:
       - npm run build
   post_build:
     commands:
-      - aws s3 sync ./dist s3://choikt-web-main
+      - aws s3 sync ./dist s3://main.choikt.com
       
