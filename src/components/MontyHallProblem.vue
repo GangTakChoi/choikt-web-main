@@ -68,7 +68,7 @@ export default {
       }
       this.step += 1
 
-      let sheepIndexList = []
+      const sheepIndexList = []
 
       for (var i = 0; i <= 2; i++) {
         if (i === this.selectCardNumber - 1) continue
@@ -131,11 +131,13 @@ export default {
       var card1 = document.getElementById('card-1')
       var card2 = document.getElementById('card-2')
       var card3 = document.getElementById('card-3')
-      var selectCard = document.getElementById('card-' + cardNumber)
       card1.style.outline = 'none'
       card2.style.outline = 'none'
       card3.style.outline = 'none'
-      selectCard.style.outline = '2px solid white'
+      if (cardNumber !== 0) {
+        var selectCard = document.getElementById('card-' + cardNumber)
+        selectCard.style.outline = '2px solid white'
+      }
     }
   }
 }

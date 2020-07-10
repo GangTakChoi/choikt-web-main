@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import MontyHallProblem from '../components/MontyHallProblem.vue'
 
 Vue.use(VueRouter)
 
@@ -8,7 +7,7 @@ const routes = [
   {
     path: '/',
     name: 'MontyHallProblem',
-    component: MontyHallProblem
+    component: () => import(/* webpackChunkName: "montyhallproblem" */ '../components/MontyHallProblem.vue')
   },
   {
     path: '/about',
