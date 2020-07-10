@@ -199,7 +199,6 @@ export default {
     left:0;
     right:0;
     text-align: center;
-    margin-top: 50px;
     span {
       margin-right: 20px;
     }
