@@ -177,20 +177,10 @@ export default {
     text-align: center;
     margin-top: 30px;
     button {
+      font-size: 15px;
       margin: 12px auto;
-      display: block;
       width: 120px;
       height: 40px;
-      font-size: 15px;
-      background-color: black;
-      color: white;
-      border: 1px solid white;
-      outline:none;
-      &:hover {
-        cursor: pointer;
-        color: black;
-        background-color: white;
-      }
     }
   }
   .score-wrap {
