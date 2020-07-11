@@ -164,7 +164,7 @@ export default {
         height: 115px;
         background-color: gray;
         &:not(:last-child) {
-          margin-right: 30px;
+          margin-right: 20px;
         }
         &:hover {
           cursor: pointer;

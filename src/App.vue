@@ -8,6 +8,8 @@
 <script>
 import Header from './components/Header.vue'
 
+require('./common.js')
+
 export default {
   name: 'App',
   components: { Header }
@@ -28,10 +30,12 @@ button {
   color: white;
   border: 1px solid white;
   outline:none;
-  &:hover {
-    cursor: pointer;
-    color: black;
-    background-color: white;
+  @media (min-width: 768px) {
+    &:hover {
+      cursor: pointer;
+      color: black;
+      background-color: white;
+    }
   }
 }
 </style>
