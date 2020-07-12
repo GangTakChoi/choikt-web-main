@@ -66,7 +66,7 @@ export default {
     display: block;
     float: left;
     height: 35px;
-    margin-top: 8px;
+    margin-top: 10px;
   }
 
   .login-button {
