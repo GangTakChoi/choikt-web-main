@@ -13,11 +13,10 @@
           </ul>
         <!-- <button class="login-button">로그인</button> -->
       </div>
-      <div class="btn"></div>
-      <div @click="menuClose" class="page_cover"></div>
+      <div @click="menuOpen" class="btn"></div>
+      <div @click="menuOpen" class="page_cover"></div>
       <div id="menu">
-        <div @click="menuClose" class="close"></div>
-        <div @click="menuClose">
+        <div @click="menuOpen">
           <router-link to="/creation">
             Creation
           </router-link>
@@ -31,19 +30,19 @@ import $ from 'jquery'
 
 export default {
   name: 'Header',
-  methods: {
-    menuClose () {
-      $('#menu,.page_cover,html').removeClass('open')
+  data () {
+    return {
+      isMenuOpen: false
     }
   },
-  mounted () {
-    $('.btn').click(function () {
-      $('#menu,.page_cover,html').addClass('open')
-      window.location.hash = '#open'
-    })
-    window.onhashchange = function () {
-      if (location.hash !== '#open') {
-        this.menuClose()
+  methods: {
+    menuOpen () {
+      if (this.isMenuOpen) {
+        $('#menu,.page_cover,html').removeClass('open')
+        this.isMenuOpen = false
+      } else {
+        $('#menu,.page_cover,html').addClass('open')
+        this.isMenuOpen = true
       }
     }
   }
@@ -93,8 +92,8 @@ export default {
   }
   .btn {
     margin-left: 5px;
-    width: 55px;
-    height: 55px;
+    width: $header-height;
+    height: $header-height;
     position: absolute;
     left: 0px;
     top: 0px;
@@ -118,24 +117,23 @@ export default {
     cursor: pointer;
   }
   #menu {
-    padding-top: 70px;
+    padding-top: 20px;
     font-size: 20px;
-    color: #000 !important;
-    width: 200px;
+    width: 250px;
     height: 100%;
     position: fixed;
-    top: 0px;
-    left: -202px;
+    top: $header-height;
+    left: -302px;
     z-index: 10;
-    border: 1px solid #c9c9c9;
-    background-color: white;
+    border: 0;
+    background-color: rgb(41, 41, 41);
     text-align: center;
-    transition: All 0.2s ease;
-    -webkit-transition: All 0.2s ease;
-    -moz-transition: All 0.2s ease;
-    -o-transition: All 0.2s ease;
+    transition: All 0.5s ease;
+    -webkit-transition: All 0.5s ease;
+    -moz-transition: All 0.5s ease;
+    -o-transition: All 0.5s ease;
     a {
-      color: black;
+      color: #fff;
     }
   }
   #menu.open {
@@ -148,7 +146,7 @@ export default {
     width: 100%;
     height: 100%;
     position: fixed;
-    top: 0px;
+    top: $header-height;
     left: 0px;
     background-color: rgba(0,0,0,0.4);
     z-index: 4;
