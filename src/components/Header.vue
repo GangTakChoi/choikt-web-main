@@ -7,7 +7,7 @@
           <ul v-if="!isMobile" class="top-menu">
             <li>
               <router-link to="/creation">
-                Creation test
+                Creation
               </router-link>
             </li>
           </ul>
